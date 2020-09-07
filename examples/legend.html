@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Leaflet legend control</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body,
+        #map {
+            height: 100%;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+    <link rel="stylesheet" href="../src/leaflet.legend.css" />
+    <script type="text/javascript" src="../src/leaflet.legend.js"></script>
+</head>
+
+<body>
+    <div id="map"></div>
+</body>
+<script type="text/javascript">
+    var map = L.map("map", {
+        center: [29.797751134173065, 120.7012939453125],
+        zoom: 8
+    });
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+
+    var marker = L.circleMarker(L.latLng(29.702368038541767, 120.47607421874999), {
+        radius: 6,
+        fillColor: "#ff0000",
+        color: "blue",
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.6,
+    });
+
+    var latlngs = [
+        [
+            29.204918463909035,
+            119.6246337890625,
+        ],
+        [
+            29.79358002272772,
+            120.27008056640624,
+        ],
+        [
+            29.70087695780884,
+            120.2984046936035,
+        ]
+    ];
+    var polyline = L.polyline(latlngs, {
+        color: 'red'
+    }).addTo(map);
+
+    const legend = L.control.Legend({
+            position: "bottomleft",
+            collapsed: false,
+            symbolWidth: 24,
+            opacity: 1,
+            column: 2,
+            legends: [{
+                label: "Marker1",
+                type: "image",
+                url: "marker/marker-red.png",
+            }, {
+                label: "Marker2",
+                type: "image",
+                url: "marker/purple.png"
+            }, {
+                label: "Circle",
+                type: "circle",
+                radius: 6,
+                color: "blue",
+                fillColor: "#FF0000",
+                fillOpacity: 0.6,
+                weight: 2,
+                layers: [marker],
+                inactive: true,
+            }, {
+                label: "Real line",
+                type: "polyline",
+                color: "#FF0000",
+                fillColor: "#FF0000",
+                weight: 2,
+                layers: polyline
+            }, {
+                label: "Dotted line",
+                type: "polyline",
+                color: "#0000FF",
+                fillColor: "#0000FF",
+                dashArray: [5, 5],
+                weight: 2
+            }, {
+                label: "Rectangle",
+                type: "rectangle",
+                color: "#FF0000",
+                fillColor: "#FF0000",
+                weight: 2
+            }, {
+                label: "Square",
+                type: "polygon",
+                sides: 4,
+                color: "#FF0000",
+                fillColor: "#FF0000",
+                weight: 2
+            }, {
+                label: "Regular triangle",
+                type: "polygon",
+                sides: 3,
+                color: "#FF0000",
+                fillColor: "#FF0000",
+                weight: 2
+            }, {
+                label: "Regular polygon",
+                type: "polygon",
+                sides: 5,
+                color: "#FF0000",
+                fillColor: "#FF0000",
+                weight: 2
+            }]
+        })
+        .addTo(map);
+
+</script>
+
+</html>
