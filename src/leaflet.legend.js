@@ -27,7 +27,7 @@ L.Control.Legend = L.Control.extend({
         this._container.style.backgroundColor = "rgba(255,255,255, " + this.options.opacity + ")";
 
         this._contents = L.DomUtil.create("section", "leaflet-legend-contents", this._container);
-        this._link = L.DomUtil.create("a", "leaflet-legend-toggle leaflet-control-layers", this._container);
+        this._link = L.DomUtil.create("a", "leaflet-legend-toggle", this._container);
         this._link.title = "Legend";
         this._link.href = "#";
 

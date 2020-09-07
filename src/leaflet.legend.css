@@ -59,6 +59,7 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   box-shadow: none;
+  border-radius: 4px;
 }
 
 .leaflet-legend-contents {
