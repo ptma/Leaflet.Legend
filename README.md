@@ -1,6 +1,7 @@
-# Leaflet.Legend
-Legend control for Leaflet
+# Leaflet.Legend 
+Leaflet.Legend is a plugin for Leaflet that display legend symbols and toggle overlays.  
 
+Check out the [demo](https://ptma.github.io/Leaflet.Legend/examples/legend.html).
 
 ## Example
 ```javascript
@@ -24,7 +25,7 @@ L.control.Legend({
 | position | String | 'topleft' | The position of the control. |
 | title | String | 'Legend' | The title of the control. |
 | opacity | Number | 1.0 | Opacity of the container. |
-| legends | LegendSymbol[] | [] | Array of legend symbols that will be added to the container. |
+| legends | LegendSymbol[] | [] | Array of [legend symbols](#legendsymbol) that will be added to the container. |
 | symbolWidth | Number | 24 | Symbol width of the legend, in pixels. |
 | symbolHeight | Number | 24 | Symbol width of the legend, in pixels. |
 | column | Number | 1 | The number of columns arranged in the legend. |
