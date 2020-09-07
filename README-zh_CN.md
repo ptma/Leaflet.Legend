@@ -1,7 +1,7 @@
 # Leaflet.Legend 
 Leaflet.Legend 是一个 Leaflet 插件， 用于显示图例符号和切换相应的叠加层的显示.  
 
-在线 [demo](https://ptma.github.io/Leaflet.Legend/examples/legend.html).
+在线 [demo](https://ptma.gitee.io/leaflet.legend/examples/legend.html).
 
 ## 用法示例
 ```javascript
