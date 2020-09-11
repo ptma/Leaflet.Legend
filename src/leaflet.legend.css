@@ -4,6 +4,7 @@
 
 .leaflet-legend-title {
   margin: 3px;
+  padding-bottom: 5px;
 }
 
 .leaflet-legend-column {
